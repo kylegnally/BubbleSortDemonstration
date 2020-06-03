@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BubbleSortDemonstration
 {
@@ -23,6 +19,7 @@ namespace BubbleSortDemonstration
                 rand = new Random();
                 ArrayToSort newArray = new ArrayToSort(size, rand);
                 finalArrays.Add(newArray);
+                //Console.WriteLine(newArray.ToString());
             }
             Console.WriteLine("Collection created.");
             Environment.Exit(0);

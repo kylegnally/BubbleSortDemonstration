@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BubbleSortDemonstration
 {
@@ -37,7 +33,7 @@ namespace BubbleSortDemonstration
 
             foreach (int member in Result)
             {
-                s += "Element value:" + i.ToString() + "\t" + Result[member].ToString() + "\n";
+                s += "Element number:\t" + i.ToString() + "\tValue:\t" + Result[member].ToString() + "\n";
                 i++;
             }
 
