@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ArrayToSort.cs" />
     <Compile Include="ArraysCollection.cs" />
+    <Compile Include="BubbleSort.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

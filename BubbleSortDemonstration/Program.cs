@@ -7,22 +7,24 @@ namespace BubbleSortDemonstration
         static void Main(string[] args)
         {
             Random rand;
-            ArraysCollection finalArrays = new ArraysCollection();
+            //ArraysCollection finalArrays = new ArraysCollection();
+            //BubbleSort sortThis;
 
             int[] arraySizes =
             {
-                100, 1000, 10000, 25000, 50000, 100000, 250000, 500000, 750000, 1000000
+                10, //100, 1000, 10000, 25000, 50000, 100000, 250000, 500000, 750000, 1000000
             };
 
             foreach (int size in arraySizes)
             {
                 rand = new Random();
                 ArrayToSort newArray = new ArrayToSort(size, rand);
-                finalArrays.Add(newArray);
                 //Console.WriteLine(newArray.ToString());
             }
             Console.WriteLine("Collection created.");
             Environment.Exit(0);
         }
+
+        
     }
 }
