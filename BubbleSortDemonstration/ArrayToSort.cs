@@ -71,6 +71,8 @@ namespace BubbleSortDemonstration
                             array[i] = array[i - 1];
                             array[i - 1] = temp;
                         }
+
+                        // size--; this should be different
                     }
                     sorted = true;
                 }
