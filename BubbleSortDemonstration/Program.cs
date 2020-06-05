@@ -10,6 +10,7 @@ namespace BubbleSortDemonstration
         {
             Random rand;
             ArrayToSort newArray;
+            int[] sortedArray;
 
             StreamReader reader;
             StreamWriter writer;
@@ -24,9 +25,8 @@ namespace BubbleSortDemonstration
             {
                 rand = new Random();
                 newArray = new ArrayToSort(size, rand);
-
-                Console.WriteLine("Collection created.");
                 
+                sortedArray = newArray.SortArray(newArray.Result);
                 //foreach (int number in newArray.Result)
                 //{
                 //    Console.WriteLine(newArray.Result);

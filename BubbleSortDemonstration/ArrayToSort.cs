@@ -18,7 +18,8 @@ namespace BubbleSortDemonstration
             private set => _result = _resultingArray;
         }
 
-        public DateTime Length { get; set; }
+        public DateTime OuterLoopElapsed { get; set; }
+        public DateTime InnerLoopElapsed { get; set; }
 
         public ArrayToSort(int size, Random r)
         {
@@ -27,18 +28,18 @@ namespace BubbleSortDemonstration
             _rand = r;
             _resultingArray = new int[_size];
             MakeArray(_rand);
-            SortArray(Result);
+            //SortArray(Result);
         }
 
-        private int[] MakeArray(int size, Random rnd)
-        {
-            for (int i = 0; i < size; i++)
-            {
-                _resultingArray[i] = rnd.Next(1, _size + 1);
-            }
+        //private int[] MakeArray(int size, Random rnd)
+        //{
+        //    for (int i = 0; i < size; i++)
+        //    {
+        //        _resultingArray[i] = rnd.Next(1, _size + 1);
+        //    }
 
-            return _resultingArray;
-        }
+        //    return _resultingArray;
+        //}
 
         private void MakeArray(Random rnd)
         {
@@ -65,8 +66,11 @@ namespace BubbleSortDemonstration
 
         public int[] SortArray(int[] array)
         {
+            DateTime start = DateTime.Now;
+            DateTime end;
             bool sorted = false;
             int size = array.Length;
+
             while (!sorted)
             {
                 foreach (int arrayMember in array)
@@ -87,23 +91,24 @@ namespace BubbleSortDemonstration
 
                     size = size - 1;
                 }
+                // end = DateTime.Now;
             }
             _resultingArray = array;
             return Result;
         }
 
-        public override string ToString()
-        {
-            string s = null;
-            int i = 0;
+        //public override string ToString()
+        //{
+        //    string s = null;
+        //    int i = 0;
 
-            foreach (int member in Result)
-            {
-                s += "Element number:\t" + i.ToString() + "\tValue:\t" + Result[member].ToString() + "\n";
-                i++;
-            }
+        //    foreach (int member in Result)
+        //    {
+        //        s += "Element number:\t" + i.ToString() + "\tValue:\t" + Result[member].ToString() + "\n";
+        //        i++;
+        //    }
 
-            return s;
-        }
+        //    return s;
+        //}
     }
 }

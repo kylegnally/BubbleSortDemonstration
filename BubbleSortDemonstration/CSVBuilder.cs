@@ -9,7 +9,8 @@ namespace BubbleSortDemonstration
     class CSVBuilder
     {
         private string _csvString;
-        private string _delimiter = ",";
+        private string _COL_DELIMITER = ",";
+        private const string _COLESCAPE = ",,";
         private ArrayToSort _array;
         public string CSVString { get; set; }
 
@@ -23,14 +24,17 @@ namespace BubbleSortDemonstration
         private void BuildString(ArrayToSort array)
         {
             _csvString = "";
-            for (int i = 0; i < array.; i++)
+            for (int i = 0; i < array.Result.Length; i++)
             {
-                // if this is the first row
+                // if this is the first row, make the column headers
                 if (i == 0)
                 {
-                    _csvString = "OPERATION TYPE,OPERATION TIMESTAMP,OPERATION ELAPSED,,";
+                    _csvString = 
+                        "OPERATION TYPE" + _COL_DELIMITER + 
+                        "OPERATION TIMESTAMP" + _COL_DELIMITER + 
+                        "OPERATION ELAPSED" + _COLESCAPE;
                 }
-                _csvString += "\n" + array.SortedArray[i]
+                //_csvString += "\n" + array.Result[i]
             }
         }
     }
