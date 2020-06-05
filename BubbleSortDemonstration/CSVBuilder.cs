@@ -17,7 +17,21 @@ namespace BubbleSortDemonstration
         {
             _array = arrayToMakeString;
             _csvString = "";
-            //BuildString(_array);
+            BuildString(arrayToMakeString);
+        }
+
+        private void BuildString(ArrayToSort array)
+        {
+            _csvString = "";
+            for (int i = 0; i < array.; i++)
+            {
+                // if this is the first row
+                if (i == 0)
+                {
+                    _csvString = "OPERATION TYPE,OPERATION TIMESTAMP,OPERATION ELAPSED,,";
+                }
+                _csvString += "\n" + array.SortedArray[i]
+            }
         }
     }
 }
