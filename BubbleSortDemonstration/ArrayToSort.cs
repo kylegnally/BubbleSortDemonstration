@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.ExceptionServices;
 
 namespace BubbleSortDemonstration
@@ -48,21 +49,26 @@ namespace BubbleSortDemonstration
 
         public void SortArray(int[] array)
         {
+            bool sorted = false;
             int size = array.Length;
-            foreach (int arrayMember in array)
+            while (!sorted)
             {
-                //for (int i = 1; i < size - 1; i++)
-                for (int i = 1; i < size; i++)
+                foreach (int arrayMember in array)
                 {
-                    if (array[i] < array[i - 1])
+
+                    //for (int i = 1; i < size - 1; i++)
+                    for (int i = 1; i < size; i++)
                     {
-                        int temp = array[i];
-                        array[i] = array[i - 1];
-                        array[i - 1] = temp;
+                        if (array[i] < array[i - 1])
+                        {
+                            int temp = array[i];
+                            array[i] = array[i - 1];
+                            array[i - 1] = temp;
+                        }
                     }
+                    sorted = true;
                 }
             }
-            
             _resultingArray = array;
         }
 

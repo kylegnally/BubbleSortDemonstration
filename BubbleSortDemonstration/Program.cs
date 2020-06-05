@@ -12,7 +12,7 @@ namespace BubbleSortDemonstration
 
             int[] arraySizes =
             {
-                /*10, 100, 1000, 10000, 25000, 50000, 100000, 250000, 500000, 750000, */ 1000000,
+                10, // 100, 1000, 10000, 25000, 50000, 100000, 250000, 500000, 750000,  1000000,
             };
 
             foreach (int size in arraySizes)
