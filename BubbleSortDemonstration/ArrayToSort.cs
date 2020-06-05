@@ -30,6 +30,16 @@ namespace BubbleSortDemonstration
             SortArray(Result);
         }
 
+        private int[] MakeArray(int size, Random rnd)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                _resultingArray[i] = rnd.Next(1, _size + 1);
+            }
+
+            return _resultingArray;
+        }
+
         private void MakeArray(Random rnd)
         {
             for (int i = 0; i < _size; i++)

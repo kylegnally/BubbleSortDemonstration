@@ -13,7 +13,7 @@ namespace BubbleSortDemonstration
 
             StreamReader reader;
             StreamWriter writer;
-            StringBuilder stBuilder;
+            CSVBuilder csvBuilder;
 
             int[] arraySizes =
             {
@@ -26,7 +26,7 @@ namespace BubbleSortDemonstration
                 newArray = new ArrayToSort(size, rand);
 
                 Console.WriteLine("Collection created.");
-
+                csvBuilder = new CSVBuilder(newArray);
                 //foreach (int number in newArray.Result)
                 //{
                 //    Console.WriteLine(newArray.Result);
