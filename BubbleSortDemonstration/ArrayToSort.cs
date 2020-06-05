@@ -14,8 +14,8 @@ namespace BubbleSortDemonstration
 
         public int[] Result
         {
-            get => _result;
-            private set => _result = _resultingArray;
+            get { return _result; }
+            private set { _result = _resultingArray; }
         }
 
         public DateTime OuterLoopElapsed { get; set; }
@@ -27,8 +27,6 @@ namespace BubbleSortDemonstration
             _size = size;
             _rand = r;
             _resultingArray = new int[_size];
-            MakeArray(_rand);
-            //SortArray(Result);
         }
 
         //private int[] MakeArray(int size, Random rnd)
@@ -64,38 +62,38 @@ namespace BubbleSortDemonstration
         //        }
         //}
 
-        public int[] SortArray(int[] array)
-        {
-            DateTime start = DateTime.Now;
-            DateTime end;
-            bool sorted = false;
-            int size = array.Length;
+        //public int[] SortArray(int[] array)
+        //{
+        //    //DateTime start = DateTime.Now;
+        //    //DateTime end;
+        //    bool sorted = false;
+        //    int size = array.Length;
 
-            while (!sorted)
-            {
-                foreach (int arrayMember in array)
-                {
+        //    while (!sorted)
+        //    {
+        //        foreach (int arrayMember in array)
+        //        {
 
-                    for (int i = 1; i < size; i++)
-                    {
-                        if (array[i] <= array[i - 1])
-                        {
-                            int temp = array[i];
-                            array[i] = array[i - 1];
-                            array[i - 1] = temp;
-                            sorted = true;
-                        }
+        //            for (int i = 1; i < size; i++)
+        //            {
+        //                if (array[i] <= array[i - 1])
+        //                {
+        //                    int temp = array[i];
+        //                    array[i] = array[i - 1];
+        //                    array[i - 1] = temp;
+        //                    sorted = true;
+        //                }
 
-                        // size--; this should be different
-                    }
+        //                // size--; this should be different
+        //            }
 
-                    size = size - 1;
-                }
-                // end = DateTime.Now;
-            }
-            _resultingArray = array;
-            return Result;
-        }
+        //            size = size - 1;
+        //        }
+        //        // end = DateTime.Now;
+        //    }
+        //    _resultingArray = array;
+        //    return Result;
+        //}
 
         //public override string ToString()
         //{

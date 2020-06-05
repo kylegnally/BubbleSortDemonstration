@@ -10,6 +10,7 @@ namespace BubbleSortDemonstration
         {
             Random rand;
             ArrayToSort newArray;
+            RequiredSorting requiredSorts;
             int[] sortedArray;
 
             StreamReader reader;
@@ -18,15 +19,15 @@ namespace BubbleSortDemonstration
 
             int[] arraySizes =
             {
-                10, 100, //1000, 10000, 25000, 50000, 100000, 250000, 500000, 750000,  1000000,
+                10, //100, 1000, 10000, 25000, 50000, 100000, 250000, 500000, 750000,  1000000,
             };
 
             foreach (int size in arraySizes)
             {
                 rand = new Random();
                 newArray = new ArrayToSort(size, rand);
-                
-                sortedArray = newArray.SortArray(newArray.Result);
+                requiredSorts = new RequiredSorting(newArray.Result);
+                //builder = new CSVBuilder();
                 //foreach (int number in newArray.Result)
                 //{
                 //    Console.WriteLine(newArray.Result);

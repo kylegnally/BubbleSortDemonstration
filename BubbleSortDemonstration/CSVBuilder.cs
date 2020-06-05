@@ -9,33 +9,36 @@ namespace BubbleSortDemonstration
     class CSVBuilder
     {
         private string _csvString;
-        private string _COL_DELIMITER = ",";
-        private const string _COLESCAPE = ",,";
-        private ArrayToSort _array;
+        private string TYPE = "";
+        private const string DELIMITER = ",";
+        private const string ESCAPE = ",,\n";
+        private int[] _array;
         public string CSVString { get; set; }
 
-        public CSVBuilder(ArrayToSort arrayToMakeString)
+        public CSVBuilder(int[] arrayToMakeString)
         {
             _array = arrayToMakeString;
-            _csvString = "";
-            BuildString(arrayToMakeString);
         }
 
-        private void BuildString(ArrayToSort array)
+        public void BuildString(string loopName, string stringToAdd)
         {
+            string str = loopName;
             _csvString = "";
-            for (int i = 0; i < array.Result.Length; i++)
+            switch (str)
             {
-                // if this is the first row, make the column headers
-                if (i == 0)
-                {
-                    _csvString = 
-                        "OPERATION TYPE" + _COL_DELIMITER + 
-                        "OPERATION TIMESTAMP" + _COL_DELIMITER + 
-                        "OPERATION ELAPSED" + _COLESCAPE;
-                }
-                //_csvString += "\n" + array.Result[i]
+                    
+                //case "Total Computation":
+                //    _csvString += "\n" + str + ESCAPE
             }
+            if (_csvString == "")
+            {
+                int colCount = 0;
+                _csvString =
+                    "OPERATION TYPE" + DELIMITER +
+                    "OPERATION TIMESTAMP" + DELIMITER +
+                    "OPERATION ELAPSED" + ESCAPE;
+            }
+            else _csvString += stringToAdd ;
         }
     }
 }
