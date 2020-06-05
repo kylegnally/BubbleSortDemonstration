@@ -7,12 +7,18 @@ namespace BubbleSortDemonstration
     class ArrayToSort
     {
         private readonly int _size;
-        private int[] origArray;
 
         private  int[] _resultingArray;
         private readonly Random _rand;
+        private int[] _result;
 
-        public int[] Result { get; private set; }
+        public int[] Result
+        {
+            get => _result;
+            private set => _result = _resultingArray;
+        }
+
+        public DateTime Length { get; set; }
 
         public ArrayToSort(int size, Random r)
         {
@@ -21,7 +27,8 @@ namespace BubbleSortDemonstration
             _rand = r;
             _resultingArray = new int[_size];
             MakeArray(_rand);
-            SortArray(Result);
+            SortArray(Result);                 
+                                                
         }
 
         private void MakeArray(Random rnd)
@@ -56,7 +63,6 @@ namespace BubbleSortDemonstration
                 foreach (int arrayMember in array)
                 {
 
-                    //for (int i = 1; i < size - 1; i++)
                     for (int i = 1; i < size; i++)
                     {
                         if (array[i] < array[i - 1])
