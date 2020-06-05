@@ -54,30 +54,34 @@ namespace BubbleSortDemonstration
         //        }
         //}
 
-        public void SortArray(int[] array)
+        public int[] SortArray(int[] array)
         {
-            bool sorted = false;
-            int size = array.Length;
-            while (!sorted)
+            bool swapped = false;
+            int sizeOfArray = array.Length;
+            do
             {
-                foreach (int arrayMember in array)
-                {
+                swapped = false;
+                //foreach (int arrayMember in array)
+                //{
 
-                    for (int i = 1; i < size; i++)
+                    for (int i = 1; i <= sizeOfArray - 1; i++)
                     {
-                        if (array[i] < array[i - 1])
+                        if (array[i - 1] > array[i])
                         {
                             int temp = array[i];
                             array[i] = array[i - 1];
                             array[i - 1] = temp;
+                            swapped = true;
                         }
-
-                        // size--; this should be different
                     }
-                    sorted = true;
-                }
-            }
-            _resultingArray = array;
+
+                    sizeOfArray = sizeOfArray = 1;
+                //}
+                _resultingArray = array;
+
+            } while (!swapped);
+
+            return Result;
         }
 
         public override string ToString()
