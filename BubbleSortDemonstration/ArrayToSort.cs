@@ -27,8 +27,7 @@ namespace BubbleSortDemonstration
             _rand = r;
             _resultingArray = new int[_size];
             MakeArray(_rand);
-            SortArray(Result);                 
-                                                
+            SortArray(Result);
         }
 
         private void MakeArray(Random rnd)
@@ -56,31 +55,30 @@ namespace BubbleSortDemonstration
 
         public int[] SortArray(int[] array)
         {
-            bool swapped = false;
-            int sizeOfArray = array.Length;
-            do
+            bool sorted = false;
+            int size = array.Length;
+            while (!sorted)
             {
-                swapped = false;
-                //foreach (int arrayMember in array)
-                //{
+                foreach (int arrayMember in array)
+                {
 
-                    for (int i = 1; i <= sizeOfArray - 1; i++)
+                    for (int i = 1; i < size; i++)
                     {
-                        if (array[i - 1] > array[i])
+                        if (array[i] <= array[i - 1])
                         {
                             int temp = array[i];
                             array[i] = array[i - 1];
                             array[i - 1] = temp;
-                            swapped = true;
+                            sorted = true;
                         }
+
+                        // size--; this should be different
                     }
 
-                    sizeOfArray = sizeOfArray = 1;
-                //}
-                _resultingArray = array;
-
-            } while (!swapped);
-
+                    size = size - 1;
+                }
+            }
+            _resultingArray = array;
             return Result;
         }
 
